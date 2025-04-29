@@ -15,8 +15,8 @@ The purpose of this repository is to demonstrate how [ZenML](https://github.com/
 Let's jump into the Python packages you need. Within the Python environment of your choice, run:
 
 ```bash
-git clone https://github.com/zenml-io/zenml-projects.git
-cd zenml-projects/customer-satisfaction
+git clone https://github.com/ayush714/customer-satisfaction-mlops.git
+cd <folder name in which the clone is there>/customer-satisfaction
 pip install -r requirements.txt
 ```
 
@@ -26,6 +26,10 @@ to observe your stacks, stack components and pipeline DAGs in a dashboard interf
 ```bash
 pip install zenml["server"]
 zenml up
+```
+for windows:
+```bash
+zenml up --blocking
 ```
 
 If you are running the `run_deployment.py` script, you will also need to install some integrations using ZenML:
