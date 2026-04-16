@@ -5,7 +5,7 @@ import os
 
 import numpy as np
 import pandas as pd
-from materializer.custom_materializer import cs_materializer
+from pydantic import BaseModel
 from steps.clean_data import clean_data
 from steps.evaluation import evaluation
 from steps.ingest_data import ingest_data
@@ -19,7 +19,6 @@ from zenml.integrations.mlflow.model_deployers.mlflow_model_deployer import (
 )
 from zenml.integrations.mlflow.services import MLFlowDeploymentService
 from zenml.integrations.mlflow.steps import mlflow_model_deployer_step
-from zenml.steps import BaseParameters, Output
 
 from .utils import get_data_for_test
 
@@ -47,7 +46,7 @@ def dynamic_importer() -> str:
     return data
 
 
-class DeploymentTriggerConfig(BaseParameters):
+class DeploymentTriggerConfig(BaseModel):
     """Parameters that are used to trigger the deployment"""
 
     min_accuracy: float = 0.9
@@ -56,7 +55,7 @@ class DeploymentTriggerConfig(BaseParameters):
 @step
 def deployment_trigger(
     accuracy: float,
-    config: DeploymentTriggerConfig,
+    config: DeploymentTriggerConfig = DeploymentTriggerConfig(),
 ) -> bool:
     """Implements a simple model deployment trigger that looks at the
     input model accuracy and decides if it is good enough to deploy"""
@@ -64,7 +63,7 @@ def deployment_trigger(
     return accuracy > config.min_accuracy
 
 
-class MLFlowDeploymentLoaderStepParameters(BaseParameters):
+class MLFlowDeploymentLoaderStepParameters(BaseModel):
     """MLflow deployment getter parameters
 
     Attributes:
@@ -185,7 +184,7 @@ def predictor(
     return prediction
 
 
-@pipeline(enable_cache=True, settings={"docker": docker_settings})
+@pipeline(enable_cache=False, settings={"docker": docker_settings})
 def continuous_deployment_pipeline(
     min_accuracy: float = 0.9,
     workers: int = 1,
@@ -195,8 +194,8 @@ def continuous_deployment_pipeline(
     df = ingest_data()
     x_train, x_test, y_train, y_test = clean_data(df)
     model = train_model(x_train, x_test, y_train, y_test)
-    mse, rmse = evaluation(model, x_test, y_test)
-    deployment_decision = deployment_trigger(accuracy=mse)
+    r2_score, rmse = evaluation(model, x_test, y_test)
+    deployment_decision = deployment_trigger(accuracy=r2_score)
     mlflow_model_deployer_step(
         model=model,
         deploy_decision=deployment_decision,

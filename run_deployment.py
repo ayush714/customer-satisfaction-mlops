@@ -37,7 +37,18 @@ DEPLOY_AND_PREDICT = "deploy_and_predict"
 def main(config: str, min_accuracy: float):
     """Run the MLflow example pipeline."""
     # get the MLflow model deployer stack component
-    mlflow_model_deployer_component = MLFlowModelDeployer.get_active_model_deployer()
+    try:
+        mlflow_model_deployer_component = MLFlowModelDeployer.get_active_model_deployer()
+    except TypeError as e:
+        print(f"[bold red]Cannot run deployment:[/bold red] {e}")
+        print(
+            "Set an active stack with an MLflow model deployer, then re-run.\n"
+            "Example:\n"
+            "  zenml model-deployer register mlflow_deployer --flavor=mlflow\n"
+            "  zenml stack register mlflow_stack -a default -o default -d mlflow_deployer\n"
+            "  zenml stack set mlflow_stack"
+        )
+        return
     deploy = config == DEPLOY or config == DEPLOY_AND_PREDICT
     predict = config == PREDICT or config == DEPLOY_AND_PREDICT
 
@@ -51,19 +62,35 @@ def main(config: str, min_accuracy: float):
 
     if predict:
         # Initialize an inference pipeline run
-        inference_pipeline(
-            pipeline_name="continuous_deployment_pipeline",
-            pipeline_step_name="mlflow_model_deployer_step",
-        )
+        try:
+            inference_pipeline(
+                pipeline_name="continuous_deployment_pipeline",
+                pipeline_step_name="mlflow_model_deployer_step",
+            )
+        except RuntimeError as e:
+            print(f"[bold yellow]Skipping inference:[/bold yellow] {e}")
+            print(
+                "No running deployment service was found. This usually means the "
+                "deployment trigger was not met. Re-run with a lower threshold, "
+                "for example: `python3 run_deployment.py --min-accuracy 0.05`."
+            )
+            return
 
-    print(
-        "You can run:\n "
-        f"[italic green]    mlflow ui --backend-store-uri '{get_tracking_uri()}"
-        "[/italic green]\n ...to inspect your experiment runs within the MLflow"
-        " UI.\nYou can find your runs tracked within the "
-        "`mlflow_example_pipeline` experiment. There you'll also be able to "
-        "compare two or more runs.\n\n"
-    )
+    try:
+        tracking_uri = get_tracking_uri()
+        print(
+            "You can run:\n "
+            f"[italic green]    mlflow ui --backend-store-uri '{tracking_uri}'"
+            "[/italic green]\n ...to inspect your experiment runs within the MLflow"
+            " UI.\nYou can find your runs tracked within the "
+            "`mlflow_example_pipeline` experiment. There you'll also be able to "
+            "compare two or more runs.\n\n"
+        )
+    except ValueError:
+        print(
+            "No MLflow experiment tracker is configured on the active stack, so "
+            "the MLflow UI command hint is unavailable.\n"
+        )
 
     # fetch existing services with same pipeline name, step name and model name
     existing_services = mlflow_model_deployer_component.find_model_server(

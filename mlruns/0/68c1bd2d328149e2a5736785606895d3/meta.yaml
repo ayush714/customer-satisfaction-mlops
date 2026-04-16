@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/68c1bd2d328149e2a5736785606895d3/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 68c1bd2d328149e2a5736785606895d3
+run_name: merciful-donkey-234
+run_uuid: 68c1bd2d328149e2a5736785606895d3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776361915588
+status: 1
+tags: []
+user_id: admin1

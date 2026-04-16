@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/24b220a5bcf747c7a0a8643f749978ea/artifacts
+end_time: 1776361400415
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 24b220a5bcf747c7a0a8643f749978ea
+run_name: amazing-stoat-16
+run_uuid: 24b220a5bcf747c7a0a8643f749978ea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776361390442
+status: 3
+tags: []
+user_id: admin1

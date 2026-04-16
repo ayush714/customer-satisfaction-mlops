@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/da7f1bbe13c44ddc99b212616839937e/artifacts
+end_time: 1776191532083
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: da7f1bbe13c44ddc99b212616839937e
+run_name: vaunted-grub-590
+run_uuid: da7f1bbe13c44ddc99b212616839937e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776191511367
+status: 3
+tags: []
+user_id: admin1

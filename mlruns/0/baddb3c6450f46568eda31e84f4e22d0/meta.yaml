@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/baddb3c6450f46568eda31e84f4e22d0/artifacts
+end_time: 1776362195752
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: baddb3c6450f46568eda31e84f4e22d0
+run_name: brawny-rat-80
+run_uuid: baddb3c6450f46568eda31e84f4e22d0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776362188627
+status: 3
+tags: []
+user_id: admin1

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/2abce64643844d7e8d1c10023372db13/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2abce64643844d7e8d1c10023372db13
+run_name: valuable-shad-140
+run_uuid: 2abce64643844d7e8d1c10023372db13
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776362199070
+status: 1
+tags: []
+user_id: admin1
