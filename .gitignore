@@ -1,0 +1,56 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE and local tooling
+.vscode/
+.idea/
+
+# ZenML local state
+.zen/
+
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Requested ignore
+__init__
+__init__.py
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Test and lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and runtime files
+*.log
+logs/
+*.pid
+*.out
+*.err
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.secret
+
+# OS files
+.DS_Store
+Thumbs.db

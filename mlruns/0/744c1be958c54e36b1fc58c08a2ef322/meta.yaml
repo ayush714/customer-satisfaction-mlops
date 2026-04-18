@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/744c1be958c54e36b1fc58c08a2ef322/artifacts
+end_time: 1776362348876
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 744c1be958c54e36b1fc58c08a2ef322
+run_name: powerful-goat-248
+run_uuid: 744c1be958c54e36b1fc58c08a2ef322
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776362339692
+status: 3
+tags: []
+user_id: admin1

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/305f70eaab1a45cab25243074f583d1f/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 305f70eaab1a45cab25243074f583d1f
+run_name: fortunate-sloth-643
+run_uuid: 305f70eaab1a45cab25243074f583d1f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776362352148
+status: 1
+tags: []
+user_id: admin1

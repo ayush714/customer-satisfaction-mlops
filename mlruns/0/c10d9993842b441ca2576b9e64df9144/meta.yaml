@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/c10d9993842b441ca2576b9e64df9144/artifacts
+end_time: 1776360672649
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c10d9993842b441ca2576b9e64df9144
+run_name: beautiful-bug-441
+run_uuid: c10d9993842b441ca2576b9e64df9144
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776360666650
+status: 3
+tags: []
+user_id: admin1

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/a9b31c7ca2e04e18bd31265f6f6be1a7/artifacts
+end_time: 1776362066312
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a9b31c7ca2e04e18bd31265f6f6be1a7
+run_name: ambitious-hound-242
+run_uuid: a9b31c7ca2e04e18bd31265f6f6be1a7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776362058603
+status: 3
+tags: []
+user_id: admin1

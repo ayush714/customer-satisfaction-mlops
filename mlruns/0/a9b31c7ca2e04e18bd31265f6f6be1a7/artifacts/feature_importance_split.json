@@ -1,0 +1,14 @@
+{
+  "payment_sequential": 34,
+  "payment_installments": 109,
+  "payment_value": 521,
+  "price": 422,
+  "freight_value": 385,
+  "product_name_lenght": 208,
+  "product_description_lenght": 322,
+  "product_photos_qty": 90,
+  "product_weight_g": 281,
+  "product_length_cm": 211,
+  "product_height_cm": 225,
+  "product_width_cm": 192
+}

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/0e917be7ef914e188ca8f5ad38570fb5/artifacts
+end_time: 1776191541154
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0e917be7ef914e188ca8f5ad38570fb5
+run_name: sassy-bird-201
+run_uuid: 0e917be7ef914e188ca8f5ad38570fb5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776191535682
+status: 3
+tags: []
+user_id: admin1

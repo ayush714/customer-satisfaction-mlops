@@ -1,0 +1,15 @@
+artifact_uri: file:///home/admin1/customer-satisfaction-mlops/mlruns/0/417aadacf4a84e64ba9dac4f34a73de1/artifacts
+end_time: 1776361387278
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 417aadacf4a84e64ba9dac4f34a73de1
+run_name: melodic-flea-190
+run_uuid: 417aadacf4a84e64ba9dac4f34a73de1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776361376863
+status: 3
+tags: []
+user_id: admin1
